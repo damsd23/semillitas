@@ -17,8 +17,8 @@
 
 					<div class="form-group">
 						<label for="codigo">Codigo:</label> <input type="text"
-							class="form-control" placeholder="Codigo" th:field="*{codigo}">
-						<small class="form-text text-danger"
+							class="form-control" placeholder="Codigo" th:field="*{codigo}"><small
+							class="form-text text-danger"
 							th:if="${#fields.hasErrors('codigo')}" th:errors="*{codigo}"></small>
 					</div>
 
@@ -37,16 +37,14 @@
 					<div class="form-group">
 						<label for="ApePat">Apellido Paterno:</label> <input type="text"
 							class="form-control" placeholder="Apellido Paterno"
-							th:field="*{ApePat}"> <small
-							class="form-text text-danger"
-							th:if="${#fields.hasErrors('ApePat')}" th:errors="*{ApePat}"></small>
+							th:field="*{ApePat}"><small class="form-text text-danger"
+							th:if="${#fields.hasErrors('apePat')}" th:errors="*{apePat}"></small>
 					</div>
 					<div class="form-group">
 						<label for="ApeMat">Apellido Materno:</label> <input type="text"
 							class="form-control" placeholder="Apellido Materno"
-							th:field="*{ApeMat}"> <small
-							class="form-text text-danger"
-							th:if="${#fields.hasErrors('ApeMat')}" th:errors="*{ApeMat}"></small>
+							th:field="*{ApeMat}"><small class="form-text text-danger"
+							th:if="${#fields.hasErrors('apeMat')}" th:errors="*{apeMat}"></small>
 					</div>
 					<div class="form-group">
 						<label for="edad">Edad:</label> <input type="text"
@@ -55,16 +53,23 @@
 					<div class="form-group">
 						<label for="direccion">Direccion:</label> <input type="text"
 							class="form-control" placeholder="Direccion"
-							th:field="*{direccion}">
+							th:field="*{direccion}"><small
+							class="form-text text-danger"
+							th:if="${#fields.hasErrors('direccion')}"
+							th:errors="*{direccion}"></small>
 					</div>
 					<div class="form-group">
 						<label for="telefono">Telefono:</label> <input type="text"
 							class="form-control" placeholder="Telefono"
-							th:field="*{telefono}">
+							th:field="*{telefono}"><small
+							class="form-text text-danger"
+							th:if="${#fields.hasErrors('telefono')}" th:errors="*{telefono}"></small>
 					</div>
 					<div class="form-group">
 						<label for="correo">Correo:</label> <input type="text"
 							class="form-control" placeholder="Correo" th:field="*{correo}">
+						<small class="form-text text-danger"
+							th:if="${#fields.hasErrors('correo')}" th:errors="*{correo}"></small>
 					</div>
 					<button type="submit" class="btn btn-primary">
 						<i class="fas fa-save"></i> Grabar

@@ -29,10 +29,10 @@ public class InitDB implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 		
-		/*this.usuarioRepository.deleteAll();
+		this.usuarioRepository.deleteAll();
 		this.authorityRepository.deleteAll();
 		
-		Usuario juan = new Usuario();
+		/*Usuario juan = new Usuario();
 		juan.setUsername("juan");
 		juan.setPassword(passwordEncoder.encode("juan"));
 		juan.setApellidos("Flores");
@@ -45,6 +45,16 @@ public class InitDB implements CommandLineRunner{
 		admin.setPassword(passwordEncoder.encode("admin"));
 		admin.setEnable(true);
 		
+		Usuario beto = new Usuario();
+		beto.setUsername("beto");
+		beto.setPassword(passwordEncoder.encode("beto"));
+		beto.setEnable(true);
+		
+		Usuario starchild = new Usuario();
+		starchild.setUsername("starchild");
+		starchild.setPassword(passwordEncoder.encode("elpanzas"));
+		starchild.setEnable(true);
+		
 		/*
         
         juan.addAuthority("ROLE_USER");
@@ -53,6 +63,14 @@ public class InitDB implements CommandLineRunner{
         admin.addAuthority("ROLE_ADMIN");
         admin.addAuthority("ACCESS_REST1");
         admin.addAuthority("ACCESS_REST2");
+        
+        beto.addAuthority("ROLE_ADMIN");
+        beto.addAuthority("ACCESS_REST1");
+        beto.addAuthority("ACCESS_REST2");
+        
+        starchild.addAuthority("ROLE_ADMIN");
+        starchild.addAuthority("ACCESS_REST1");
+        starchild.addAuthority("ACCESS_REST2");
        
         //estudiante.addAuthority("ACCES_REST1");
         ///estudiante.addAuthority("");
@@ -60,7 +78,7 @@ public class InitDB implements CommandLineRunner{
         manager.addAuthority("ROLE_MANAGER");
         manager.addAuthority("ACCESS_REST1");
         */
-        List<Usuario> usuarios = Arrays.asList(admin);        
+        List<Usuario> usuarios = Arrays.asList(admin, beto, starchild);        
         this.usuarioRepository.saveAll(usuarios);
 	}
 }

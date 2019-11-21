@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
+import javax.naming.Binding;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -150,7 +151,7 @@ public class AlumnoController {
 	
 				model.addAttribute("alumnos", secciones.get());
 			} else {
-				return "redirect://alumno";
+				return "redirect:alumno";
 			}
 		} catch (Exception e) {
 		}
@@ -226,13 +227,9 @@ public class AlumnoController {
 	}
 	
 	@PostMapping("saveapoderado")
-	public String saveApoderado(@ModelAttribute("apoderado") Apoderado apoderado, Model model, SessionStatus status, @Valid Apoderado apod,
-			BindingResult result) {
-		
-		if (result.hasErrors()) {
+	public String saveApoderado(@ModelAttribute("apoderado") Apoderado apoderado, Model model, SessionStatus status, @Valid Apoderado apod, BindingResult result){
+		if(result.hasErrors())
 			return "alumno/nuevoapoderado";
-			}
-		
 		try {
 			apoderadoService.save(apoderado);
 			status.setComplete();
@@ -261,8 +258,10 @@ public class AlumnoController {
 	
 	@PostMapping("saveusuario")
 	public String saveUsuario(@ModelAttribute("usuario") Usuario usuario, 
-			Model model, SessionStatus status) {
-		
+			Model model, SessionStatus status, @Valid Usuario usu, BindingResult result ) {
+		if(result.hasErrors()) {
+			return "alumno/nuevousuario";
+		}
 		try {
 			// Verificar que el username ya exista.
 			Optional<Usuario> optional 

@@ -9,7 +9,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Pattern;
 
 @Entity
 @Table(name="apoderados")
@@ -17,38 +16,37 @@ public class Apoderado {
 
 	@Id
 	@NotEmpty(message="* No puede quedar vac�o")
-	@Pattern(regexp="[AP0-9]{5}+" ,  message="* Obligatorio: El c�digo debe comenzar con 'AP'. Ejemplo :AP001")
 	@Column(name="cod_apoderado" , length= 5)
 	private String codigo;
 
-	@NotEmpty(message="* No puede quedar vac�o")
-	@Pattern(regexp="[0-9]{8}+", message="* Es obligatorio :  S�lo n�meros de 8 d�gitos")
 	@Column(name="dni" , length=8 , nullable=false)
+	@NotEmpty(message="* No puede quedar vac�o")
 	private String DNI;
 	
-	@NotEmpty(message="*  No puede quedar vac�o")
 	@Column(name="nombre_apoderado" , length=20 , nullable=false)
+	@NotEmpty(message="* No puede quedar vac�o")
 	private String nombre;
 	
-	@NotEmpty(message="* No puede quedar vac�o")
-	@Pattern(regexp="[a-zA-Z]+")
 	@Column(name="apellido_Paterno" , length=20 , nullable=false)
+	@NotEmpty(message="* No puede quedar vac�o")
 	private String ApePat;
 	
-	@NotEmpty(message="* No puede quedar vac�o")
-	@Pattern(regexp="[a-zA-Z]+")
 	@Column(name="apellido_Materno" , length=20 , nullable=false)
+	@NotEmpty(message="* No puede quedar vac�o")
 	private String ApeMat;
 	
 	@Column(name="edad" , length=2 , nullable=false)
 	private Short edad;
 	
+	@NotEmpty(message="* No puede quedar vac�o")
 	@Column(name="direccion" , length=30 , nullable=false)
 	private String direccion;
 	
+	@NotEmpty(message="* No puede quedar vac�o")
 	@Column(name="telefono" , length=9 , nullable=false)
 	private String telefono;
 	
+	@NotEmpty(message="* No puede quedar vac�o")
 	@Column(name="correo" , length=30 , nullable=false)
 	private String correo;
 	

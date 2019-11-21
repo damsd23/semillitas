@@ -14,18 +14,21 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name = "users")
 public class Usuario {
 
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+	@NotEmpty(message="* No puede quedar vacio")
     @Column(length = 30, nullable = false)
     private String username;
 
+	@NotEmpty(message="* No puede quedar vacio")
     @Column(length = 60, nullable = false)
     private String password;
 

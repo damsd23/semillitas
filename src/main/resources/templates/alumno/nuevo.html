@@ -20,7 +20,7 @@
 					<div class="form-group">
 						<label for="codigo">Codigo:</label> <input type="text"
 							class="form-control" placeholder="Codigo de Alumno"
-							th:field="*{codigo}" th:value="sd"> <small
+							th:field="*{codigo}" > <small
 							class="form-text text-danger"
 							th:if="${#fields.hasErrors('codigo')}" th:errors="*{codigo}"></small>
 					</div>
@@ -70,14 +70,14 @@
 							th:field="*{fechaNac}">
 					</div>
 
-					<div class="form-group">
-						<label for="Genero">Genero:</label> <select th:field="*{genero}"
-							class="form-control">
-							<option th:value="M" th:text="Masculino"></option>
-							<option th:value="F" th:text="Femenino"></option>
-						</select>
-					</div>
-
+						<div class="form-group">
+						<label for="Genero">Genero:</label> 
+						<select th:field="*{genero}" class="form-control">
+					      <option th:value="M" th:text="Masculino"></option>
+					      <option th:value="F" th:text="Femenino"></option>
+					    </select>
+					    	</div>
+					
 
 					<div class="form-group">
 						<label for="direccion">Direccion:</label> <input type="text"

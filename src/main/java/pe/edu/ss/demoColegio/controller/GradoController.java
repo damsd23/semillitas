@@ -108,7 +108,7 @@ public class GradoController {
 	public String save(@ModelAttribute("grado") Grado grado, Model model, SessionStatus status, @Valid Grado grad,
 			BindingResult result) {
 		if (result.hasErrors()) {
-			return "alumno/nuevo";
+			return "grado/nuevo";
 		}
 
 		try {
@@ -175,7 +175,7 @@ public class GradoController {
 				seccionService.deleteById(id);
 			}
 		} catch (Exception e) {
-			model.addAttribute("dangerDel", "ERROR - Violacion contra el principio de Integridad Referencial");
+			model.addAttribute("dangerDel", "ERROR - Hay alumnos registrados en esta seccion");
 			try {
 				List<Seccion> secciones = seccionService.findAll();
 				model.addAttribute("secciones", secciones);

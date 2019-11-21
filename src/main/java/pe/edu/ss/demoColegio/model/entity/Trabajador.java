@@ -12,27 +12,34 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name="trabajadores")
 public class Trabajador {
 	
 	@Id
+	@NotEmpty(message="* No puede quedar vac�o")
 	@Column(name="cod_trabajador" , length=5)
 	private String codigo;
 	
+	@NotEmpty(message="* No puede quedar vac�o")
 	@Column(name="dni" , length=8 , nullable=false)
 	private String DNI;
 	
+	@NotEmpty(message="* No puede quedar vac�o")
 	@Column(name="nombre_trabajador" , length=20 , nullable=false)
 	private String nombre;
 	
+	@NotEmpty(message="* No puede quedar vac�o")
 	@Column(name="apellido_Paterno" , length=20 , nullable=false)
 	private String ApePat;
 	
+	@NotEmpty(message="* No puede quedar vac�o")
 	@Column(name="apellido_Materno" , length=20 , nullable=false)
 	private String ApeMat;
 	
+
 	@Column(name="fecha_Nacimiento" , nullable=false)
 	private Date fechaNac;
 	
@@ -45,9 +52,11 @@ public class Trabajador {
 	@Column(name="telefono" , length=9 , nullable=false)
 	private String telefono;
 	
+	@NotEmpty(message="* No puede quedar vac�o")
 	@Column(name="correo" , length=30 , nullable=false)
 	private String correo;
 	
+	@NotEmpty(message="* No puede quedar vac�o")
 	@Column(name="direccion" , length=30 , nullable=false)
 	private String direccion;
 	

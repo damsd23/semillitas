@@ -1,13 +1,21 @@
 package pe.edu.ss.demoColegio.controller;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -38,6 +46,15 @@ public class TrabajadorController {
 	@Autowired
     private PasswordEncoder passwordEncoder;
 	
+	@InitBinder("trabajador")
+	public void customizeBinding(WebDataBinder binder) {
+		SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd");
+
+		binder.registerCustomEditor(Date.class, "fechaNac", new CustomDateEditor(dateFormatter, true));
+		binder.registerCustomEditor(Date.class, "fechaIngreso", new CustomDateEditor(dateFormatter, true));
+	}
+	
+	
 	@GetMapping
 	public String inicio(Model model) {
 		try {
@@ -67,7 +84,10 @@ public class TrabajadorController {
 	}
 
 	@PostMapping("save")
-	public String save(@ModelAttribute("trabajador") Trabajador trabajador, Model model, SessionStatus status) {
+	public String save(@ModelAttribute("trabajador") Trabajador trabajador, Model model, SessionStatus status,
+			@Valid Trabajador trab, BindingResult result) {
+		if(result.hasErrors())
+			return "trabajador/nuevo";
 		try {
 			trabajadorService.save(trabajador);
 			status.setComplete();

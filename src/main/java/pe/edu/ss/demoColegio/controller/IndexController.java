@@ -51,7 +51,7 @@ public class IndexController {
 			// TODO: handle exception
 		}
 		
-		return "verid";
+		return "/verid";
 		
 	}
 }

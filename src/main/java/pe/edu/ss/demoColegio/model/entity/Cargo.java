@@ -9,18 +9,22 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name="cargos")
 public class Cargo {
 	
 	@Id
+	@NotEmpty(message="* No puede quedar vac�o")
 	@Column(name="cod_cargo" , length=3)
 	private String codigo;
 	
+	@NotEmpty(message="* No puede quedar vac�o")
 	@Column(name="descripcion" , length=30 , nullable = false)
 	private String descripcion;
 	
+	@NotEmpty(message="* No puede quedar vac�o")
 	@Column(name="estado" , length=10 , nullable = false)
 	private String Estado;
 	

@@ -3,12 +3,14 @@
 <head th:replace="layout/layout :: head">
 <body>
 	<header th:replace="layout/layout :: header"></header>
-
+	<a sec:authorize="hasRole('ROLE_ADMIN')"
+		th:href="@{'/createPdf'}" style="float: right;"><img
+		th:src="@{/img/pdf.png}" style="width: 40px;">Reporte 
+		de Alumnos</a>
 	<div class="container">
 
 		<h1></h1>
 		<h1></h1>
-
 		<div class="card text-center">
 			<div class="card-header">Lista de alumnos</div>
 			<div class="card-body">

@@ -18,51 +18,66 @@
 
 					<div class="form-group">
 						<label for="codigo">Codigo:</label> <input type="text"
-							class="form-control" placeholder="Codigo" th:field="*{codigo}">
+							class="form-control" placeholder="Codigo" th:field="*{codigo}"><small
+							class="form-text text-danger"
+							th:if="${#fields.hasErrors('codigo')}" th:errors="*{codigo}"></small>
+
 					</div>
 
 					<div class="form-group">
 						<label for="DNI">DNI:</label> <input type="text"
-							class="form-control" placeholder="DNI" th:field="*{DNI}">
+							class="form-control" placeholder="DNI" th:field="*{DNI}"><small
+							class="form-text text-danger" th:if="${#fields.hasErrors('DNI')}"
+							th:errors="*{DNI}"></small>
+
 					</div>
 					<div class="form-group">
 						<label for="nombre">Nombre:</label> <input type="text"
-							class="form-control" placeholder="Nombre" th:field="*{nombre}">
+							class="form-control" placeholder="Nombre" th:field="*{nombre}"><small
+							class="form-text text-danger"
+							th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></small>
+
 					</div>
 					<div class="form-group">
 						<label for="ApePat">Apellido Paterno:</label> <input type="text"
-							class="form-control" placeholder="Apellido Paterno" th:field="*{ApePat}">
+							class="form-control" placeholder="Apellido Paterno"
+							th:field="*{ApePat}"><small class="form-text text-danger"
+							th:if="${#fields.hasErrors('ApePat')}" th:errors="*{ApePat}"></small>
+
 					</div>
 					<div class="form-group">
-						<label for="ApeMat">Apellido Materno:</label> <input
-							type="text" class="form-control"
-							placeholder="Apellido Materno" th:field="*{ApeMat}">
+						<label for="ApeMat">Apellido Materno:</label> <input type="text"
+							class="form-control" placeholder="Apellido Materno"
+							th:field="*{ApeMat}"><small class="form-text text-danger"
+							th:if="${#fields.hasErrors('ApeMat')}" th:errors="*{ApeMat}"></small>
 					</div>
-					
-						<div class="form-group">
-						<label for="Genero">Genero:</label> 
-						<select th:field="*{genero}" class="form-control">
-					      <option th:value="M" th:text="Masculino"></option>
-					      <option th:value="F" th:text="Femenino"></option>
-					    </select>
-					    	</div>
-					
+
 					<div class="form-group">
-						<label for="cargo">Cargo:</label> <select
-							th:field="*{cargo}" class="form-control">
-							<option th:each="cargo : ${cargos}"
-								th:value="${cargo.codigo}" th:text="${cargo.descripcion}"></option>
+						<label for="Genero">Genero:</label> <select th:field="*{genero}"
+							class="form-control">
+							<option th:value="M" th:text="Masculino"></option>
+							<option th:value="F" th:text="Femenino"></option>
+						</select>
+					</div>
+
+					<div class="form-group">
+						<label for="cargo">Cargo:</label> <select th:field="*{cargo}"
+							class="form-control">
+							<option th:each="cargo : ${cargos}" th:value="${cargo.codigo}"
+								th:text="${cargo.descripcion}"></option>
 						</select>
 					</div>
 					<div class="form-group">
-						<label for="edad">Edad:</label> <input
-							type="text" class="form-control"
-							placeholder="Edad" th:field="*{edad}">
+						<label for="edad">Edad:</label> <input type="text"
+							class="form-control" placeholder="Edad" th:field="*{edad}">
 					</div>
 					<div class="form-group">
-						<label for="direccion">Direccion:</label> <input
-							type="text" class="form-control"
-							placeholder="Direccion" th:field="*{direccion}">
+						<label for="direccion">Direccion:</label> <input type="text"
+							class="form-control" placeholder="Direccion"
+							th:field="*{direccion}"><small
+							class="form-text text-danger"
+							th:if="${#fields.hasErrors('direccion')}"
+							th:errors="*{direccion}"></small>
 					</div>
 					<div class="form-group">
 						<label for="fechaNacimiento">Fecha de Nacimiento:</label> <input
@@ -70,19 +85,20 @@
 							placeholder="Fecha de Nacimiento" th:field="*{fechaNac}">
 					</div>
 					<div class="form-group">
-						<label for="telefono">Telefono:</label> <input
-							type="text" class="form-control"
-							placeholder="Telefono" th:field="*{telefono}">
+						<label for="telefono">Telefono:</label> <input type="text"
+							class="form-control" placeholder="Telefono"
+							th:field="*{telefono}">
 					</div>
 					<div class="form-group">
-						<label for="correo">Correo:</label> <input
-							type="text" class="form-control"
-							placeholder="Correo" th:field="*{correo}">
+						<label for="correo">Correo:</label> <input type="text"
+							class="form-control" placeholder="Correo" th:field="*{correo}"><small
+							class="form-text text-danger"
+							th:if="${#fields.hasErrors('correo')}" th:errors="*{correo}"></small>
 					</div>
 					<div class="form-group">
 						<label for="fechaIngreso">Fecha de Ingreso:</label> <input
-							type="date" class="form-control"
-							placeholder="Fecha de Ingreso" th:field="*{fechaIngreso}">
+							type="date" class="form-control" placeholder="Fecha de Ingreso"
+							th:field="*{fechaIngreso}">
 					</div>
 					<button type="submit" class="btn btn-primary">
 						<i class="fas fa-save"></i> Grabar

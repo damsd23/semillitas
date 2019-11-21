@@ -7,7 +7,7 @@
 <meta name="description" content="Human Resource Project">
 <meta name="author" content="Juan Flores-Moroco">
 
-<title>University</title>
+<title>I.E. Semillitas del Saber</title>
 
 <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
 <link rel="stylesheet" th:href="@{/css/chosen.min.css}">
@@ -45,9 +45,9 @@
 					<li sec:authorize="isAnonymous()"  class="nav-item"><a class="nav-link" th:href="@{/matricula/inicio}">
 						<i class="fas fa-sticky-note"></i> Matricula en línea</a></li>
 
-					<li sec:authorize="hasAnyRole('ROLE_TRABAJADOR', 'ROLE_ADMIN')"  class="nav-item"><a
+					<li sec:authorize="hasAnyRole('ROLE_ADMIN')" class="nav-item"><a
 						class="nav-link" th:href="@{/usuario/register}"> <i
-							class="fas fa-user-circle"></i> Nuevo Administrado
+							class="fas fa-user-circle"></i> Nuevo Administrador
 					</a></li>
 					<li sec:authorize="isAnonymous()" class="nav-item"><a
 						class="nav-link" th:href="@{/login}"> <i

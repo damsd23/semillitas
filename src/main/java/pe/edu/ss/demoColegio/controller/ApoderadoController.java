@@ -99,11 +99,8 @@ public class ApoderadoController {
 	}
 
 	@PostMapping("save")
-	public String save(@ModelAttribute("apoderado") Apoderado apoderado, Model model, SessionStatus status,
-			@Valid Apoderado apoderad, BindingResult result) {
-		if (result.hasErrors()) {
-			return "apoderado/nuevo";
-		}
+	public String save(@ModelAttribute("apoderado") Apoderado apoderado, Model model, SessionStatus status) {
+		
 
 		try {
 			apoderadoService.save(apoderado);

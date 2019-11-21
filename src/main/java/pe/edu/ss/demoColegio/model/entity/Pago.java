@@ -10,24 +10,30 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name="pagos")
 public class Pago {
 	
 	@Id
+	@NotEmpty(message="* No puede quedar vac�o")
 	@Column(name="cod_pago" , length=3)
 	private String codigo;
 	
+	@NotEmpty(message="* No puede quedar vac�o")
 	@Column(name="descripcion" , length=20)
 	private String descripcion;
 	
+	@NotEmpty(message="* No puede quedar vac�o")
 	@Column(name="estado" , length=20 , nullable = false)
 	private String Estado;
 
+	@NotEmpty(message="* No puede quedar vac�o")
 	@Column(name="fecha_pago" , nullable=false)
 	private Date fechaPago;
 	
+	@NotEmpty(message="* No puede quedar vac�o")
 	@Column(name="metodo_pago" , length=20 , nullable=false)
 	private String metodoPago;
 

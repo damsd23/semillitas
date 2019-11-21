@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name="comprobante")
@@ -19,6 +20,7 @@ public class ComprobantePago {
 	@Column(name="cod_comprobante")
 	private Integer codigo;
 	
+	@NotEmpty(message="* No puede quedar vac�o")
 	@Column(name="descripcion" , length=20)
 	private String descripcion;
 	
