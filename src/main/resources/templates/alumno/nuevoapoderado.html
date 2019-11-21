@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head"></head>
+<body>
+	<header th:replace="layout/layout :: header"></header>
+
+	<div class="container">
+
+		<h1>Nuevo Apoderado</h1>
+
+		<div class="card">
+			<div class="card-header">Registro de Apoderado</div>
+			<div class="card-body">
+
+				<form th:action="@{/alumno/saveapoderado}" th:object="${apoderado}"
+					method="post">
+
+					<div class="form-group">
+						<label for="codigo">Codigo:</label> <input type="text"
+							class="form-control" placeholder="Codigo" th:field="*{codigo}">
+						<small class="form-text text-danger"
+							th:if="${#fields.hasErrors('codigo')}" th:errors="*{codigo}"></small>
+					</div>
+
+					<div class="form-group">
+						<label for="DNI">DNI:</label> <input type="text"
+							class="form-control" placeholder="DNI" th:field="*{DNI}"><small
+							class="form-text text-danger" th:if="${#fields.hasErrors('DNI')}"
+							th:errors="*{DNI}"></small>
+					</div>
+					<div class="form-group">
+						<label for="nombre">Nombre:</label> <input type="text"
+							class="form-control" placeholder="Nombre" th:field="*{nombre}"><small
+							class="form-text text-danger"
+							th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></small>
+					</div>
+					<div class="form-group">
+						<label for="ApePat">Apellido Paterno:</label> <input type="text"
+							class="form-control" placeholder="Apellido Paterno"
+							th:field="*{ApePat}"> <small
+							class="form-text text-danger"
+							th:if="${#fields.hasErrors('ApePat')}" th:errors="*{ApePat}"></small>
+					</div>
+					<div class="form-group">
+						<label for="ApeMat">Apellido Materno:</label> <input type="text"
+							class="form-control" placeholder="Apellido Materno"
+							th:field="*{ApeMat}"> <small
+							class="form-text text-danger"
+							th:if="${#fields.hasErrors('ApeMat')}" th:errors="*{ApeMat}"></small>
+					</div>
+					<div class="form-group">
+						<label for="edad">Edad:</label> <input type="text"
+							class="form-control" placeholder="Edad" th:field="*{edad}">
+					</div>
+					<div class="form-group">
+						<label for="direccion">Direccion:</label> <input type="text"
+							class="form-control" placeholder="Direccion"
+							th:field="*{direccion}">
+					</div>
+					<div class="form-group">
+						<label for="telefono">Telefono:</label> <input type="text"
+							class="form-control" placeholder="Telefono"
+							th:field="*{telefono}">
+					</div>
+					<div class="form-group">
+						<label for="correo">Correo:</label> <input type="text"
+							class="form-control" placeholder="Correo" th:field="*{correo}">
+					</div>
+					<button type="submit" class="btn btn-primary">
+						<i class="fas fa-save"></i> Grabar
+					</button>
+					<a th:href="@{/alumno}" class="btn btn-danger"> <i
+						class="fas fa-undo-alt"></i> Cancelar
+					</a>
+				</form>
+			</div>
+		</div>
+	</div>
+	<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>

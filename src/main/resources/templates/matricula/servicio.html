@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head"></head>
+<head>
+<meta charset="ISO-8859-1">
+
+</head>
+<body>
+	<header th:replace="layout/layout :: header"></header>
+
+	<div class="container" align='center'>
+
+		<h5>  </h5>
+
+		<div class="card text-center" align='center'>
+			<!-- class="card" 
+			<div class="card-header">
+				<p class="text-center">I.E.P "Semillitas del Saber"</p>
+			</div>-->
+
+			<div></div>
+
+			<div class="card text-center">
+				<div class="card-header " > <strong>  SERVICIOS   </strong></div>
+				<div class="card-body">
+					
+					<a  th:href="@{/matricula/nuevo}" class="btn btn-primary">  MATRICULA </a>
+					
+					
+				</div>
+				
+			</div>
+
+
+		</div>
+	</div>
+	<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>

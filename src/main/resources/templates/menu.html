@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head"></head>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<header th:replace="layout/layout :: header"></header>
+
+	<div class="container">
+
+		<h1></h1>
+
+		<div class="card">
+			<div class="card-header">
+				<p class="text-center">I.E.P "Semillitas del Saber"</p>
+			</div>
+
+			<div class="row">
+
+				<div class="col-sm-6">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">TRABAJADORES</h5>
+							<p class="card-text"></p>
+							<li sec:authorize="hasAnyRole('ROLE_TRABAJADOR', 'ROLE_ADMIN')" class="nav-item"><a class="btn btn-primary" th:href="@{/trabajador}">
+						<i class="fas fa-home"></i> Trabajadores</a></li>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">MATRICULA</h5>
+							<p class="card-text"></p>
+							<li sec:authorize="hasAnyRole('ROLE_TRABAJADOR', 'ROLE_ADMIN')" class="nav-item"><a class="btn btn-primary" th:href="@{/alumno}">
+						<i class="fas fa-home"></i> Matricula en linea</a></li>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">GRADO</h5>
+							<p class="card-text">grados</p>
+							<li sec:authorize="hasAnyRole('ROLE_TRABAJADOR', 'ROLE_ADMIN')" class="nav-item"><a class="btn btn-primary" th:href="@{/grado}">
+						<i class="fas fa-home"></i> Grados</a></li>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-sm-6">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">APODERADO</h5>
+							<p class="card-text">Padres de Familia o Apoderados</p>
+							<li sec:authorize="hasAnyRole('ROLE_TRABAJADOR', 'ROLE_ADMIN')" class="nav-item"><a class="btn btn-primary" th:href="@{/apoderado}">
+						<i class="fas fa-home"></i> Apoderados</a></li>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">CARGOS</h5>
+							<p class="card-text">Cargos</p>
+							<li sec:authorize="hasAnyRole('ROLE_TRABAJADOR', 'ROLE_ADMIN')" class="nav-item"><a class="btn btn-primary" th:href="@{/cargo}">
+						<i class="fas fa-home"></i> Cargos</a></li>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>

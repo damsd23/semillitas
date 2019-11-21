@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head">
+<body>
+	<header th:replace="layout/layout :: header"></header>
+
+	<div class="container">
+
+		<h1></h1>
+		<h1></h1>
+
+		<div class="card text-center">
+			<div class="card-header">Lista de apoderados</div>
+			<div class="card-body">
+
+				<div th:if="${dangerDel}" class="alert alert-danger" role="alert">
+					<span th:text="${dangerDel}"></span>
+				</div>
+
+				<table id="table" class="table table-striped">
+					<thead>
+						<tr>
+							<th scope="col">Codigo</th>
+							<th scope="col">DNI</th>
+							<th scope="col">Nombre</th>
+							<th scope="col">Apellido Paterno</th>
+							<th scope="col">Apellido Materno</th>
+							<th scope="col">Direccion</th>
+							<th scope="col">Telefono</th>
+							<th scope="col"></th>
+						</tr>
+					</thead>
+					<tbody th:each="apoderado: ${apoderados}">
+						<tr>
+							<th scope="row" th:text="${apoderado.codigo}">1</th>
+							<td th:text="${apoderado.DNI}">Mark</td>
+							<td th:text="${apoderado.nombre}">Otto</td>
+							<td th:text="${apoderado.ApePat}">@mdo</td>
+							<td th:text="${apoderado.ApeMat}">@mdo</td>
+							<td th:text="${apoderado.direccion}">@mdo</td>
+							<td th:text="${apoderado.telefono}">@mdo</td>
+							<td><a sec:authorize="hasAnyRole('ROLE_TRABAJADOR', 'ROLE_ADMIN')"
+								th:href="@{ '/apoderado/info/' + ${apoderado.codigo} }"
+								class="btn btn-info"> <i class="fas fa-info"></i>
+							</a> <a sec:authorize="hasAnyRole('ROLE_TRABAJADOR', 'ROLE_ADMIN')" th:href="@{ '/apoderado/edit/' + ${apoderado.codigo} }"
+								class="btn btn-warning"> <i class="fas fa-edit"></i>
+							</a> <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{ '/apoderado/del/' + ${apoderado.codigo} }"
+								class="btn btn-danger"> <i class="fas fa-trash-alt"></i>
+							</a></td>
+						</tr>
+					</tbody>
+				</table>
+
+			</div>
+			<div class="card-footer text-muted">
+				<a th:href="@{/menu}" class="btn btn-primary"><i
+					class="fas fa-arrow-left"></i> Atras</a>
+			</div>
+		</div>
+
+	</div>
+
+	<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>

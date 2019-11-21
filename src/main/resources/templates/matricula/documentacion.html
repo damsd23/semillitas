@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head"></head>
+<head>
+<meta charset="ISO-8859-1">
+
+</head>
+<body>
+	<header th:replace="layout/layout :: header"></header>
+
+	<div class="container">
+
+		<h1></h1>
+
+		<div class="card text-center">
+			<!-- class="card" -->
+			<div class="card-header">
+				<p class="text-center">I.E.P "Semillitas del Saber"</p>
+			</div>
+
+			<div>
+				<h4> La matricula para alumno nuevo es presencial , acercarse a secretaria para realizar los tramites
+				correspondientes</h4>
+				<h6> Para realizar los tramites llevar los siguientes documentos: </h6>
+				
+				<ul class="list-unstyled">
+
+					<li>* Fotocopia de DNI</li>
+					<li>* Partida de nacimiento</li>
+					<li>* Papeles del antiguo Colegio</li>
+
+				</ul>
+
+
+
+			</div>
+			<div class="card-footer text-muted">
+				<a th:href="@{/matricula/inicio}" class="btn btn-danger"> <i
+					class="fas fa-undo"></i> Volver
+				</a>
+			</div>
+		</div>
+	</div>
+	<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>

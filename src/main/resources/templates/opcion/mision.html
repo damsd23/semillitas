@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head"></head>
+<head>
+<meta charset="ISO-8859-1">
+
+</head>
+<body>
+	<header th:replace="layout/layout :: header"></header>
+	<div class="container">
+
+		<h1></h1>
+
+		<div class="card text-center">
+			<!-- class="card" -->
+			<div class="card-header">
+				<p class="text-center" ><h2 style="color:#FF3333";>Mision<h2></p>
+			</div>
+
+			<div>
+				<strong><font color = "black" size="6px"> <p align="center"> <br/>  Aquello a cuyo cumplimiento debe dirigirse nuestro trabajo en el colegio,<br/> 
+					la razón de ser, aquello para lo que existimos, quiénes somos.</p> </font></strong>
+					
+				<dfn><font color = "blue" size="4px"><h4> <p align="center"> Somos un colegio que ofrece a la sociedad una propuesta educativa que<br/> 
+				<p align="center"> tiene como objetivo la formación  integral del alumno (personal, social y transcendente) <br/>
+				<p align="center"> y una adecuada formación académica desde Infantil hasta Secundaria,<br/>
+				<p align="center"> según los valores y el espíritu del Evangelio desde la corresponsabilidad del Equipo<br/> 
+				<p align="center"> Educativo y con la colaboración de sus familias. Nuestra misión se sintetiza en el lema: <br/><br/></p></h4></font></dfn>
+				
+				<strong><font color = "black" size="6px"></h2>“Hoy y siempre, llamados a evangelizar… llamados a educar…”</font></strong>
+
+
+
+			</div>
+			<div class="card-footer text-muted">
+				<a th:href="@{/}" class="btn btn-danger"> <i class="fas fa-undo"></i>
+					Volver
+				</a>
+			</div>
+		</div>
+	</div>
+	<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>

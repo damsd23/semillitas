@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head"></head>
+<body>
+	<header th:replace="layout/layout :: header"></header>
+
+	<div class="container">
+
+		<h1>Informacion del apoderado</h1>
+
+		<div class="card text-center">
+			<div class="card-header">Informacion del apoderado</div>
+			<div class="card-body">
+
+				<div th:if="${dangerDel}" class="alert alert-danger" role="alert">
+					<span th:text="${dangerDel}"></span>
+				</div>
+				<form>
+					<div class="form-group row">
+						<label for="codigo" class="col-sm-2 col-form-label">Codigo:
+						</label>
+						<div class="col-sm-10">
+							<input type="text" readonly th:value="${apoderado.codigo}"
+								class="form-control-plaintext">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="DNI" class="col-sm-2 col-form-label">DNI: </label>
+						<div class="col-sm-10">
+							<input type="text" readonly th:value="${apoderado.DNI}"
+								class="form-control-plaintext">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="nombre" class="col-sm-2 col-form-label">Nombre:
+						</label>
+						<div class="col-sm-10">
+							<input type="text" readonly th:value="${apoderado.nombre}"
+								class="form-control-plaintext">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="ApePat" class="col-sm-2 col-form-label">Apellido
+							Paterno: </label>
+						<div class="col-sm-10">
+							<input type="text" readonly th:value="${apoderado.ApePat}"
+								class="form-control-plaintext">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="ApeMat" class="col-sm-2 col-form-label">Apellido
+							Materno: </label>
+						<div class="col-sm-10">
+							<input type="text" readonly th:value="${apoderado.ApeMat}"
+								class="form-control-plaintext">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="edad" class="col-sm-2 col-form-label">Edad: </label>
+						<div class="col-sm-10">
+							<input type="text" readonly th:value="${apoderado.edad}"
+								class="form-control-plaintext">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="direccion" class="col-sm-2 col-form-label">Direccion:
+						</label>
+						<div class="col-sm-10">
+							<input type="text" readonly th:value="${apoderado.direccion}"
+								class="form-control-plaintext">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="telefono" class="col-sm-2 col-form-label">Telefono:
+						</label>
+						<div class="col-sm-10">
+							<input type="text" readonly th:value="${apoderado.telefono}"
+								class="form-control-plaintext">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="correo" class="col-sm-2 col-form-label">Correo:
+						</label>
+						<div class="col-sm-10">
+							<input type="text" readonly th:value="${apoderado.correo}"
+								class="form-control-plaintext">
+						</div>
+					</div>
+				</form>
+				<div class="card-header">Alumno Encargado:</div>
+			<table class="table table-striped">
+					<thead>
+						<tr>
+							<th scope="col">Codigo</th>
+							<th scope="col">DNI</th>
+							<th scope="col">Nombre</th>
+							<th scope="col">Apellido Paterno</th>
+							<th scope="col">Apellido Materno</th>
+							<th scope="col">Edad</th>
+							<th scope="col">Direccion</th>
+						</tr>
+					</thead>
+					<tbody th:each="alumno: ${apoderado.alumno}">
+						<tr>
+							<th scope="row" th:text="${alumno.codigo}">1</th>
+							<td th:text="${alumno.DNI}">Mark</td>
+							<td th:text="${alumno.nombre}">Otto</td>
+							<td th:text="${alumno.ApePat}">@mdo</td>
+							<td th:text="${alumno.ApeMat}">@mdo</td>
+							<td th:text="${alumno.edad}">@mdo</td>
+							<td th:text="${alumno.direccion}">@mdo</td>
+						</tr>
+					</tbody>
+				</table>  
+				
+			</div>
+			<div class="card-footer text-muted">
+				<a th:href="@{/apoderado}" class="btn btn-success"><i
+					class="fas fa-arrow-left"></i> Atras</a>
+			</div>
+		</div>
+	</div>
+	<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>
+
+
+
+
+
+
+
+

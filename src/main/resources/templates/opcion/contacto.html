@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head"></head>
+<head>
+<meta charset="ISO-8859-1">
+
+</head>
+<body>
+	<header th:replace="layout/layout :: header"></header>
+	<div class="container">
+
+		<h1></h1>
+
+		<div class="card text-center">
+			<!-- class="card" -->
+			<div class="card-header">
+				<p class="text-center" ><h2 style="color:#FF3333";>Contacto escolar<h2></p>
+			</div>
+
+			<div>
+				<strong><font color = "black" size="4px"> <p align="left"> <br/> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Si desea comunicarse con nosotros, puede hacerlo mediante los siguientes numeros o correos:</p> </font></strong>
+					
+				<font color = "black" size="4px">
+				<p align="left"><li type="disc"> Telefono: 5773214 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</li></p></font>
+				
+				<font color = "black" size="4px">
+				<p align="left"><li type="disc"> Celular: 976512527 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</li></p></font>
+				
+				<font color = "black" size="4px">
+				<p align="left"><li type="disc"> Correo: iepsemillitasdelsaber@gmail.com &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</li></p></font>
+				
+				<strong><font color = "black" size="4px"> <p align="left"> <br/> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp De igual manera puede hacerlo acercandose a nuestra unica sede en:</p> </font></strong>
+				
+				<font color = "black" size="4px">
+				<p align="left"><li type="disc"> Direccion: Cruce de Av. Manco Capac cuadra 4 con Jose Carlos Mariategui &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</li></p></font>
+				
+
+
+			</div>
+			<div class="card-footer text-muted">
+				<a th:href="@{/}" class="btn btn-danger"> <i class="fas fa-undo"></i>
+					Volver
+				</a>
+			</div>
+		</div>
+	</div>
+	<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>

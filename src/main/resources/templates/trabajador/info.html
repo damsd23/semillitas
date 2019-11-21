@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head"></head>
+<body>
+	<header th:replace="layout/layout :: header"></header>
+
+	<div class="container">
+
+		<h1>Informacion del Trabajador</h1>
+
+		<div class="card text-center">
+			<div class="card-header">Informacion del Trabajador</div>
+			<div class="card-body">
+
+				<div th:if="${dangerDel}" class="alert alert-danger" role="alert">
+					<span th:text="${dangerDel}"></span>
+				</div>
+				<form>
+					<div class="form-group row">
+						<label for="codigo" class="col-sm-2 col-form-label">Codigo:
+						</label>
+						<div class="col-sm-10">
+							<input type="text" readonly th:value="${trabajador.codigo}"
+								class="form-control-plaintext">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="DNI" class="col-sm-2 col-form-label">DNI: </label>
+						<div class="col-sm-10">
+							<input type="text" readonly th:value="${trabajador.DNI}"
+								class="form-control-plaintext">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="nombre" class="col-sm-2 col-form-label">Nombre:
+						</label>
+						<div class="col-sm-10">
+							<input type="text" readonly th:value="${trabajador.nombre}"
+								class="form-control-plaintext">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="ApePat" class="col-sm-2 col-form-label">Apellido
+							Paterno: </label>
+						<div class="col-sm-10">
+							<input type="text" readonly th:value="${trabajador.ApePat}"
+								class="form-control-plaintext">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="ApeMat" class="col-sm-2 col-form-label">Apellido
+							Materno: </label>
+						<div class="col-sm-10">
+							<input type="text" readonly th:value="${trabajador.ApeMat}"
+								class="form-control-plaintext">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="cargo" class="col-sm-2 col-form-label">Cargo: </label>
+						<div class="col-sm-10">
+							<input type="text" readonly th:value="${trabajador.cargo.descripcion}"
+								class="form-control-plaintext">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="edad" class="col-sm-2 col-form-label">Edad: </label>
+						<div class="col-sm-10">
+							<input type="text" readonly th:value="${trabajador.edad}"
+								class="form-control-plaintext">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="direccion" class="col-sm-2 col-form-label">Direccion:
+						</label>
+						<div class="col-sm-10">
+							<input type="text" readonly th:value="${trabajador.direccion}"
+								class="form-control-plaintext">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="telefono" class="col-sm-2 col-form-label">Telefono:
+						</label>
+						<div class="col-sm-10">
+							<input type="text" readonly th:value="${trabajador.telefono}"
+								class="form-control-plaintext">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="correo" class="col-sm-2 col-form-label">Correo:
+						</label>
+						<div class="col-sm-10">
+							<input type="text" readonly th:value="${trabajador.correo}"
+								class="form-control-plaintext">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="fechaIngreso" class="col-sm-2 col-form-label">Fecha Ingreso:
+						</label>
+						<div class="col-sm-10">
+							<input type="text" readonly th:value="${trabajador.fechaIngreso}"
+								class="form-control-plaintext">
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="card-footer text-muted">
+				<a th:href="@{/trabajador}" class="btn btn-success"><i
+					class="fas fa-arrow-left"></i> Atras</a>
+					<a sec:authorize="hasRole('ROLE_ADMIN')"
+					th:href="@{'/trabajador/' + ${trabajador.codigo} + '/nuevousuario/'}"
+					class="btn btn-primary"><i class="fas fa-user-plus"></i> Nuevo
+					Usuario</a>
+			</div>
+		</div>
+	</div>
+	<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>
+
+
+
+
+
+
+
+

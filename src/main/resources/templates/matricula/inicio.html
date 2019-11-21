@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head"></head>
+<head>
+<meta charset="ISO-8859-1">
+
+</head>
+<body>
+	<header th:replace="layout/layout :: header"></header>
+
+	<div class="container" align='center'>
+
+		<h1></h1>
+
+		<div class="card text-center">
+			<!-- class="card" -->
+			<div class="card-header">
+				<p class="text-center">I.E.P "Semillitas del Saber"</p>
+			</div>
+
+			<div></div>
+
+			<!--  <div class="row">-->
+
+			<div class="card-group" >
+
+				<div class="card-center" style="width: 18rem;" align='center'>
+					<img src="static/img/estudiante.png"
+						th:src="@{/img/estudiante.png}" class="card-img-top">
+					<div class="card-body">
+						<h5 class="card-title">
+							<strong> Soy Alumno </strong>
+						</h5>
+
+						<a th:href="@{/loginestudiante}"  class="btn btn-primary">REALIZAR MATRICULA</a>
+					</div>
+				</div>
+				<div class="card-center" style="width: 22rem;" align='center'>
+					<img src="static/img/nino.png" th:src="@{/img/nino.png}"
+						class="card-img-top">
+					<!--  <h2></h2>-->
+					<div class="card-body">
+						<h5></h5>
+
+						<h5 class="card-title">
+							<strong> Alumno Nuevo </strong>
+						</h5>
+
+						<a th:href="@{/matricula/documentacion}"class="btn btn-primary">Go</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>
