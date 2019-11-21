@@ -47,7 +47,7 @@
 
 					<li sec:authorize="hasAnyRole('ROLE_TRABAJADOR', 'ROLE_ADMIN')"  class="nav-item"><a
 						class="nav-link" th:href="@{/usuario/register}"> <i
-							class="fas fa-user-circle"></i> Nuevo Administrador
+							class="fas fa-user-circle"></i> Nuevo Administrado
 					</a></li>
 					<li sec:authorize="isAnonymous()" class="nav-item"><a
 						class="nav-link" th:href="@{/login}"> <i
