@@ -36,10 +36,10 @@ public class Apoderado {
 	private String ApeMat;
 	
 	@Column(name="edad" , length=2 , nullable=false)
-	private Short edad;
+	private Integer edad;
 	
 	@NotEmpty(message="* No puede quedar vac�o")
-	@Column(name="direccion" , length=30 , nullable=false)
+	@Column(name="direccion" , length=100 , nullable=false)
 	private String direccion;
 	
 	@NotEmpty(message="* No puede quedar vac�o")
@@ -47,7 +47,7 @@ public class Apoderado {
 	private String telefono;
 	
 	@NotEmpty(message="* No puede quedar vac�o")
-	@Column(name="correo" , length=30 , nullable=false)
+	@Column(name="correo" , length=50 , nullable=false)
 	private String correo;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
@@ -97,11 +97,11 @@ public class Apoderado {
 		ApeMat = apeMat;
 	}
 
-	public Short getEdad() {
+	public Integer getEdad() {
 		return edad;
 	}
 
-	public void setEdad(Short edad) {
+	public void setEdad(Integer edad) {
 		this.edad = edad;
 	}
 

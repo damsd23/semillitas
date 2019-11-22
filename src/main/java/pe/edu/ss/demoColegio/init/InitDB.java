@@ -11,6 +11,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import pe.edu.ss.demoColegio.model.entity.Alumno;
+import pe.edu.ss.demoColegio.model.entity.Apoderado;
 import pe.edu.ss.demoColegio.model.entity.Usuario;
 import pe.edu.ss.demoColegio.model.repository.AlumnoRepository;
 import pe.edu.ss.demoColegio.model.repository.AuthorityRepository;
@@ -98,10 +99,49 @@ public class InitDB implements CommandLineRunner{
         alumno1.setDNI("72870063");
         alumno1.setEdad(12);
         alumno1.setDireccion("dverdeguerv@gmail.com");
-        alumno1.setFechaNac(formatter.parse("02-05-2019"));
-        alumno1.setFechaIngreso(formatter.parse("02-05-2019"));
+        alumno1.setFechaNac(formatter.parse("24-04-2007"));
+        alumno1.setFechaIngreso(formatter.parse("12-03-2019"));
         alumno1.setGenero('M');
-        this.alumnoRepository.save(alumno1);
+        
+        Alumno alumno2=new Alumno();
+        alumno2.setCodigo("ES002");
+        alumno2.setNombre("Jose Raul");
+        alumno2.setApePat("Contreras");
+        alumno2.setApeMat("Garcia");
+        alumno2.setDNI("79658063");
+        alumno2.setEdad(12);
+        alumno2.setDireccion("gcontreras9@gmail.com");
+        alumno2.setFechaNac(formatter.parse("20-11-2007"));
+        alumno2.setFechaIngreso(formatter.parse("12-03-2019"));
+        alumno2.setGenero('M');
+        
+        Alumno alumno3=new Alumno();
+        alumno3.setCodigo("ES003");
+        alumno3.setNombre("Alberto Favio");
+        alumno3.setApePat("Vallejos");
+        alumno3.setApeMat("Bueno");
+        alumno3.setDNI("76598563");
+        alumno3.setEdad(14);
+        alumno3.setDireccion("betofavio9@gmail.com");
+        alumno3.setFechaNac(formatter.parse("24-04-2005"));
+        alumno3.setFechaIngreso(formatter.parse("12-03-2019"));
+        alumno3.setGenero('M');
+
+        
+        List<Alumno> alumnos = Arrays.asList(alumno1, alumno2, alumno3);  
+        this.alumnoRepository.saveAll(alumnos);
+        
+        Apoderado apoderado1=new Apoderado();
+        apoderado1.setCodigo("AP001");
+        apoderado1.setNombre("Sonia Amparo");
+        apoderado1.setApePat("Valderrama");
+        apoderado1.setApeMat("Colan");
+        apoderado1.setCorreo("amparodance@hotmailcom");
+        apoderado1.setDNI("78521456");
+        apoderado1.setDireccion("Av. Las Casuarinas MZ G Lt. 34");
+        apoderado1.setEdad(37);
+        apoderado1.setTelefono("974679790");
+        apoderado1.setAlumno(alumno1);
         
 	}
 }

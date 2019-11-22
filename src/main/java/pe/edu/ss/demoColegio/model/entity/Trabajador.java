@@ -57,7 +57,7 @@ public class Trabajador {
 	private String correo;
 	
 	@NotEmpty(message="* No puede quedar vac�o")
-	@Column(name="direccion" , length=30 , nullable=false)
+	@Column(name="direccion" , length=100 , nullable=false)
 	private String direccion;
 	
 	@Column(name="fecha_Ingreso" , nullable=false)
