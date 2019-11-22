@@ -96,6 +96,7 @@ public class InitDB implements CommandLineRunner{
         alumno1.setDireccion("dverdeguerv@gmail.com");
         alumno1.setFechaNac(formatter.parse("02-05-2019"));
         alumno1.setFechaIngreso(formatter.parse("02-05-2019"));
+        alumno1.setGenero('M');
         
 	}
 }
