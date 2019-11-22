@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import pe.edu.ss.demoColegio.model.entity.Alumno;
 import pe.edu.ss.demoColegio.model.entity.Usuario;
+import pe.edu.ss.demoColegio.model.repository.AlumnoRepository;
 import pe.edu.ss.demoColegio.model.repository.AuthorityRepository;
 import pe.edu.ss.demoColegio.model.repository.UsuarioRepository;
 
@@ -22,6 +23,9 @@ public class InitDB implements CommandLineRunner{
 
 	@Autowired
 	private UsuarioRepository usuarioRepository;
+	
+	@Autowired
+	private AlumnoRepository alumnoRepository;
 	
 	@Autowired
 	private AuthorityRepository authorityRepository;
@@ -97,6 +101,7 @@ public class InitDB implements CommandLineRunner{
         alumno1.setFechaNac(formatter.parse("02-05-2019"));
         alumno1.setFechaIngreso(formatter.parse("02-05-2019"));
         alumno1.setGenero('M');
+        this.alumnoRepository.save(alumno1);
         
 	}
 }
