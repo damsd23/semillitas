@@ -40,14 +40,7 @@ public class InitDB implements CommandLineRunner{
 		this.usuarioRepository.deleteAll();
 		this.authorityRepository.deleteAll();
 		
-		/*Usuario juan = new Usuario();
-		juan.setUsername("juan");
-		juan.setPassword(passwordEncoder.encode("juan"));
-		juan.setApellidos("Flores");
-		juan.setNombres("Juan");
-		juan.setCargo("cargo");
-		juan.setEnable(true);
-		*/
+
 		Usuario admin = new Usuario();
 		admin.setUsername("admin");
 		admin.setPassword(passwordEncoder.encode("123admin123"));
@@ -63,12 +56,9 @@ public class InitDB implements CommandLineRunner{
 		starchild.setPassword(passwordEncoder.encode("elpanzas"));
 		starchild.setEnable(true);
 		
-		/*
-        
-        juan.addAuthority("ROLE_USER");
-        juan.addAuthority("ACCESS_MEDICO_READ");
-        */
-        admin.addAuthority("ROLE_ADMIN");
+	
+      
+      admin.addAuthority("ROLE_ADMIN");
         admin.addAuthority("ACCESS_REST1");
         admin.addAuthority("ACCESS_REST2");
         
@@ -80,18 +70,13 @@ public class InitDB implements CommandLineRunner{
         starchild.addAuthority("ACCESS_REST1");
         starchild.addAuthority("ACCESS_REST2");
        
-        //estudiante.addAuthority("ACCES_REST1");
-        ///estudiante.addAuthority("");
-        /*
-        manager.addAuthority("ROLE_MANAGER");
-        manager.addAuthority("ACCESS_REST1");
-        */
-        List<Usuario> usuarios = Arrays.asList(admin, beto, starchild);        
+      
+     List<Usuario> usuarios = Arrays.asList(admin, beto, starchild);        
         this.usuarioRepository.saveAll(usuarios);
         
         SimpleDateFormat formatter= new SimpleDateFormat("dd-MM-yyyy");
       
-        Alumno alumno1=new Alumno();
+     /*   Alumno alumno1=new Alumno();
         alumno1.setCodigo("ES001");
         alumno1.setNombre("Diego");
         alumno1.setApePat("Verdeguer");
@@ -140,8 +125,8 @@ public class InitDB implements CommandLineRunner{
         apoderado1.setDNI("78521456");
         apoderado1.setDireccion("Av. Las Casuarinas MZ G Lt. 34");
         apoderado1.setEdad(37);
-        apoderado1.setTelefono("974679790");
-        apoderado1.setAlumno(alumno1);
+        apoderado1.setTelefono("974679790");*/
+       
         
 	}
 }
